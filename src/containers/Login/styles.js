@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import BackgroundLogin from '../../assets/background-login.svg';
-import Background from '../../assets/background.svg';
+import BackgroundPadrao from '../../assets/background-padrao.svg';
 
 export const Container = styled.div`
     display: flex;
@@ -37,7 +37,7 @@ export const RightContainer = styled.div`
     width: 100%;
     max-width: 50%;
 
-    background: url('${Background}');
+    background: url('${BackgroundPadrao}');
     background-color: #1e1e1e;
 
     p {
