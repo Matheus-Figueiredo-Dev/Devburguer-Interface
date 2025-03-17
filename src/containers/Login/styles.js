@@ -2,7 +2,7 @@ import { Link as ReactLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 import BackgroundLogin from '../../assets/background-login.svg';
-import BackgroundPadrao from '../../assets/background-padrao.svg';
+import Background from '../../assets/background.svg';
 
 export const Container = styled.div`
     display: flex;
@@ -38,7 +38,7 @@ export const RightContainer = styled.div`
     width: 100%;
     max-width: 50%;
 
-    background: url('${BackgroundPadrao}');
+    background: url('${Background}');
     background-color: #1e1e1e;
 
     p {
