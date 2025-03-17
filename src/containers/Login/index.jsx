@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import * as yup from 'yup';
 
@@ -14,9 +15,12 @@ import {
   LeftContainer,
   RightContainer,
   Title,
+  Link,
 } from './styles';
 
 export function Login() {
+  const navigate = useNavigate();
+
   const schema = yup
     .object({
       email: yup
@@ -41,19 +45,30 @@ export function Login() {
   console.log(errors);
 
   const onSubmit = async (data) => {
-    const response = await toast.promise(
-      api.post('/sessions', {
+    try {
+      const response = await api.post('/sessions', {
         email: data.email,
         password: data.password,
-      }),
-      {
-        pending: 'Verificando seus dados...',
-        success: 'Seja bem-vindo(a)! 👌',
-        error: 'E-mail ou senha incorretos! 🤯',
-      },
-    );
+      });
 
-    console.log(response);
+      await toast.promise(Promise.resolve(response), {
+        pending: 'Verificando seus dados...',
+        success: {
+          render() {
+            setTimeout(() => {
+              navigate('/');
+            }, 2000);
+            return `Seja bem-vindo(a)! 👌`;
+          },
+        },
+      });
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        toast.error('E-mail ou senha inválidos! 🤯');
+      } else {
+        toast.error('Ops... Algo deu errado! 😥');
+      }
+    }
   };
 
   return (
@@ -81,7 +96,7 @@ export function Login() {
           <Button type="submit">Entrar</Button>
         </Form>
         <p>
-          Não possui conta? <a>Clique aqui</a>
+          Não possui conta? <Link to="/cadastro">Clique aqui</Link>
         </p>
       </RightContainer>
     </Container>
