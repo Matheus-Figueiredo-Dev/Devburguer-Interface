@@ -20,9 +20,6 @@ export const Banner = styled.div`
 `
 export const Container = styled.section`
     background: url('${Background}');
-    height: 400px;
-`
-
-export const Content = styled.div`
-
+    min-height: 100vh;
+    width: 100%;
 `
