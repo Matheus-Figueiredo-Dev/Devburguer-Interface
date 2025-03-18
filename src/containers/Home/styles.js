@@ -19,7 +19,8 @@ export const Banner = styled.div`
     }
 `
 export const Container = styled.section`
-    background: url('${Background}');
-    min-height: 100vh;
-    width: 100%;
+     background-image: linear-gradient(
+        rgba(255, 255, 255, 0.7), 
+        rgba(255, 255, 255, 0.7)
+    ), url('${Background}');
 `
