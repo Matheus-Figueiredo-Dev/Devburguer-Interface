@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
 import {
   Banner,
+  ButtonContainer,
   CategoryButton,
   CategoryMenu,
   Container,
@@ -11,6 +12,7 @@ import {
 } from './styles';
 import { formatPrice } from '../../utils/formatPrice';
 import { CardProduct } from '../../components/CardProduct';
+import { Button } from '../../components/Button';
 
 export function Menu() {
   const [categories, setCategories] = useState([]);
@@ -106,6 +108,16 @@ export function Menu() {
           <CardProduct key={product.id} product={product} />
         ))}
       </ProductsContainer>
+
+      <ButtonContainer>
+        <Button
+          onClick={() => {
+            navigate('/');
+          }}
+        >
+          Voltar
+        </Button>
+      </ButtonContainer>
     </Container>
   );
 }
