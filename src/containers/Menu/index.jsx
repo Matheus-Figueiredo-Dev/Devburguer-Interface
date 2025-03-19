@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { api } from '../../services/api';
 import {
@@ -16,9 +16,19 @@ export function Menu() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [activeCategory, setActiveCategory] = useState(0);
 
   const navigate = useNavigate();
+  const { search } = useLocation();
+  const queryParams = new URLSearchParams(search);
+
+  const [activeCategory, setActiveCategory] = useState(() => {
+    const categoryId = +queryParams.get('categoria');
+
+    if (categoryId) {
+      return categoryId;
+    }
+    return 0;
+  });
 
   useEffect(() => {
     async function loadCategories() {
