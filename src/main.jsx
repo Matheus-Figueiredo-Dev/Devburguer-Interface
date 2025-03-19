@@ -5,11 +5,14 @@ import { ToastContainer } from 'react-toastify';
 
 import { router } from './routes';
 import GlobalStyles from './styles/globalStyles';
+import AppProvider from './hooks';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
-    <GlobalStyles />
-    <ToastContainer theme="colored" />
+    <AppProvider>
+      <RouterProvider router={router} />
+      <GlobalStyles />
+      <ToastContainer theme="colored" />
+    </AppProvider>
   </StrictMode>,
 );

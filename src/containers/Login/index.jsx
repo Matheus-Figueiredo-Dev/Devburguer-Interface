@@ -7,6 +7,7 @@ import * as yup from 'yup';
 import Logo from '../../assets/logo.svg';
 import { Button } from '../../components/Button';
 import { api } from '../../services/api';
+import { useUser } from '../../hooks/UserContext';
 
 import {
   Container,
@@ -20,6 +21,7 @@ import {
 
 export function Login() {
   const navigate = useNavigate();
+  const { putUserData } = useUser();
 
   const schema = yup
     .object({
@@ -47,20 +49,21 @@ export function Login() {
   const onSubmit = async (data) => {
     try {
       const {
-        data: { token },
+        data: { userData },
       } = await api.post('/sessions', {
         email: data.email,
         password: data.password,
       });
-
-      localStorage.setItem('token', token);
+      putUserData(userData);
+      console.log('Dados do usuário:', userData);
+      //localStorage.setItem('token', token);
 
       await toast.promise(Promise.resolve(), {
         pending: 'Verificando seus dados...',
         success: {
           render() {
             setTimeout(() => {
-              navigate('/');
+              navigate('/home');
             }, 2000);
             return `Seja bem-vindo(a)! 👌`;
           },

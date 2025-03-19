@@ -112,7 +112,7 @@ export function Menu() {
       <ButtonContainer>
         <Button
           onClick={() => {
-            navigate('/');
+            navigate('/home');
           }}
         >
           Voltar
