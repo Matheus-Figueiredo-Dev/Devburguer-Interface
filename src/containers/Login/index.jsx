@@ -48,15 +48,14 @@ export function Login() {
 
   const onSubmit = async (data) => {
     try {
-      const {
-        data: { userData },
-      } = await api.post('/sessions', {
+      const response = await api.post('/sessions', {
         email: data.email,
         password: data.password,
       });
+
+      const userData = response.data?.userData || response.data;
+
       putUserData(userData);
-      console.log('Dados do usuário:', userData);
-      //localStorage.setItem('token', token);
 
       await toast.promise(Promise.resolve(), {
         pending: 'Verificando seus dados...',
