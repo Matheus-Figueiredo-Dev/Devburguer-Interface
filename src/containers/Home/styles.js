@@ -20,7 +20,7 @@ export const Banner = styled.div`
 `
 export const Container = styled.section`
      background-image: linear-gradient(
-        rgba(255, 255, 255, 0.7), 
-        rgba(255, 255, 255, 0.7)
+        rgba(255, 255, 255, 0.6), 
+        rgba(255, 255, 255, 0.6)
     ), url('${Background}');
 `
