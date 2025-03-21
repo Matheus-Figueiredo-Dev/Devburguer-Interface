@@ -33,6 +33,7 @@ export const Title = styled.div`
     color: #61a120;
     text-align: center;
     position: relative;
+    margin-bottom: 20px;
 
     &::after {
         position: absolute;

@@ -50,7 +50,7 @@ export const CartProvider = ({ children }) => {
   const decreaseProduct = (productId) => {
     const cartIndex = cartProducts.findIndex((prd) => prd.id === productId);
 
-    if ((cartProducts[cartIndex], quantity > 1)) {
+    if (cartProducts[cartIndex].quantity > 1) {
       const newCart = cartProducts.map((prd) => {
         return prd.id === productId
           ? { ...prd, quantity: prd.quantity - 1 }
@@ -58,7 +58,7 @@ export const CartProvider = ({ children }) => {
       });
 
       setCartProducts(newCart);
-      updateLocalStorage(newcart);
+      updateLocalStorage(newCart);
     } else {
       deleteProduct(productId);
     }
