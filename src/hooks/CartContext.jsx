@@ -23,7 +23,11 @@ export const CartProvider = ({ children }) => {
     updateLocalStorage(newProductsInCart);
   };
 
-  const clearCart = () => {};
+  const clearCart = () => {
+    setCartProducts([]);
+
+    updateLocalStorage([]);
+  };
 
   const deleteProduct = (productId) => {
     const newcart = cartProducts.filter((prd) => prd.id !== productId);

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { api } from '../../services/api';
 import {
   Banner,
   ButtonContainer,
@@ -10,9 +9,9 @@ import {
   Container,
   ProductsContainer,
 } from './styles';
+import { api } from '../../services/api';
+import { Button, CardProduct } from '../../components';
 import { formatPrice } from '../../utils/formatPrice';
-import { CardProduct } from '../../components/CardProduct';
-import { Button } from '../../components/Button';
 
 export function Menu() {
   const [categories, setCategories] = useState([]);

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 import { api } from '../../services/api';
 import { CategoryButton, Container, ContainerItems, Title } from './styles';
-import { useNavigate } from 'react-router-dom';
 
 export function CategoriesCarousel() {
   const [categories, setCategories] = useState([]);
