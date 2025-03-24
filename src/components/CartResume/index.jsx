@@ -50,30 +50,6 @@ export function CartResume() {
         theme: 'colored',
       });
     }
-
-    /*try {
-      const { status } = await api.post(
-        '/orders',
-        { products },
-        {
-          validateStatus: () => true,
-        },
-      );
-
-      if (status === 200 || status === 201) {
-        setTimeout(() => {
-          navigate('/checkout');
-        }, 2000);
-        clearCart();
-        toast.success('Pedido realizado com sucesso! 👌');
-      } else if (status === 400) {
-        toast.error('Falha ao realizar pedido! 🤯');
-      } else {
-        throw new Error();
-      }
-    } catch (error) {
-      toast.error('😭 Falha no servidor! Tente novamente!');
-    }*/
   };
 
   return (
