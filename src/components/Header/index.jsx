@@ -7,7 +7,7 @@ import {
   Content,
   HeaderLink,
   LinkContainer,
-  Logaut,
+  Logout,
   Navigation,
   Options,
   Profile,
@@ -47,7 +47,7 @@ export function Header() {
               <p>
                 Olá, <span>{userInfo?.name || 'usuário'}</span>
               </p>
-              <Logaut onClick={logoutUser}>Sair</Logaut>
+              <Logout onClick={logoutUser}>Sair</Logout>
             </div>
           </Profile>
           <LinkContainer>

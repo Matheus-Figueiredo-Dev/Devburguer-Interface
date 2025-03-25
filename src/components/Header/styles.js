@@ -72,7 +72,7 @@ export const Profile = styled.div`
     }
 `
 
-export const Logaut = styled.button`
+export const Logout = styled.button`
     color:${(props) => props.theme.red};
     text-decoration: none;
     font-weight: 700;
