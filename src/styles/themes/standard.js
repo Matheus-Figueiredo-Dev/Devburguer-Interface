@@ -9,7 +9,7 @@ export const standardTheme = {
     secondBlack: '#484848',
     darkGray: '#625e5e',
     lightGray: '#cdcdcd',
-    red: '#ff3205',
+    red: '#b22222',
     darkRed: '#cf3057',
     secondDarkRed: '#8B0000',
     white: '#fff',

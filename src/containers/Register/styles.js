@@ -39,10 +39,10 @@ export const RightContainer = styled.div`
     max-width: 50%;
 
     background: url('${Background}');
-    background-color: #1e1e1e;
+    background-color:${(props) => props.theme.secondMainBlack};
 
     p {
-        color: #${(props) => props.theme.white};
+        color: ${(props) => props.theme.white};
         font-size: 18px;
         font-weight: 800
     }
@@ -76,7 +76,7 @@ export const InputContainer = styled.div`
     label {
         font-size: 18px;
         font-weight: 600;
-        color: #${(props) => props.theme.white};
+        color: ${(props) => props.theme.white};
     }
 
     input {
@@ -98,5 +98,5 @@ export const InputContainer = styled.div`
 
 export const Link = styled(ReactLink)`
     text-decoration: none;
-    color: #${(props) => props.theme.white}
+    color: ${(props) => props.theme.white}
 `
