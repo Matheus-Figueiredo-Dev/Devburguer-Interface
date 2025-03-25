@@ -44,8 +44,6 @@ export function Login() {
     resolver: yupResolver(schema),
   });
 
-  console.log(errors);
-
   const onSubmit = async (data) => {
     try {
       const response = await api.post('/sessions', {
@@ -62,7 +60,11 @@ export function Login() {
         success: {
           render() {
             setTimeout(() => {
-              navigate('/home');
+              if (userData?.admin) {
+                navigate('/admin/home');
+              } else {
+                navigate('/home');
+              }
             }, 2000);
             return `Seja bem-vindo(a)! 👌`;
           },
