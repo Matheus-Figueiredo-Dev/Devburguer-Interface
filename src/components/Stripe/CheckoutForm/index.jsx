@@ -44,15 +44,15 @@ export default function CheckoutForm() {
       setMessage(error.message);
       toast.error(error.message);
     } else if (paymentIntent && paymentIntent.status === 'succeeded') {
-      const products = cartProducts.map((product) => {
-        return {
-          id: product.id,
-          quantity: product.quantity,
-          price: product.price,
-        };
-      });
-
       try {
+        const products = cartProducts.map((product) => {
+          return {
+            id: product.id,
+            quantity: product.quantity,
+            price: product.price,
+          };
+        });
+
         const { status } = await api.post(
           '/orders',
           { products },
@@ -66,7 +66,6 @@ export default function CheckoutForm() {
             navigate(
               `/complete?payment_intent_client_secret=${paymentIntent.client_secret}`,
             );
-            clearCart();
           }, 2000);
           clearCart();
           toast.success('Pedido realizado com sucesso! 👌');
@@ -74,6 +73,11 @@ export default function CheckoutForm() {
           toast.error('Falha ao realizar pedido! 🤯');
         } else {
           throw new Error();
+        }
+        if (paymentIntent.status !== 'succeeded') {
+          navigate(
+            `/complete?payment_intent_client_secret=${paymentIntent.client_secret}`,
+          );
         }
       } catch (error) {
         toast.error('😭 Falha no servidor! Tente novamente!');
