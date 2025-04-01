@@ -2,8 +2,14 @@ import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Image } from '@phosphor-icons/react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { api } from '../../../services/api';
+import { toast } from 'react-toastify';
+
 import {
   Container,
+  ContainerCheckbox,
   ErrorMessage,
   Form,
   Input,
@@ -13,9 +19,6 @@ import {
   Select,
   SubmitButton,
 } from './styles';
-import { useEffect, useState } from 'react';
-import { api } from '../../../services/api';
-import { toast } from 'react-toastify';
 
 const schema = yup.object({
   name: yup.string().required('Digite o nome do produto!'),
@@ -25,6 +28,7 @@ const schema = yup.object({
     .required('Digite o preço do produto!')
     .typeError('Digite o preço do produto!'),
   category: yup.object().required('Digite uma categoria!'),
+  offer: yup.bool(),
   file: yup
     .mixed()
     .test('required', 'Selecione uma imagem para continuar!', (value) => {
@@ -44,6 +48,7 @@ const schema = yup.object({
 export function NewProduct() {
   const [fileName, setFileName] = useState(null);
   const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function loadCategories() {
@@ -69,12 +74,20 @@ export function NewProduct() {
     productFormData.append('price', data.price * 100);
     productFormData.append('category_id', data.category.id);
     productFormData.append('file', data.file[0]);
+    productFormData.append('offer', data.offer ? 'true' : 'false');
 
-    await toast.promise(api.post('/products', productFormData), {
-      pending: 'Cadastrando produto...',
-      success: 'Produto cadastrado com sucesso!',
-      error: 'Erro ao cadastrar produto!',
-    });
+    try {
+      await toast.promise(api.post('/products', productFormData), {
+        pending: 'Cadastrando produto...',
+        success: 'Produto cadastrado com sucesso!',
+        error: 'Erro ao cadastrar produto!',
+      });
+      setTimeout(() => {
+        navigate('/admin/produtos');
+      }, 2000);
+    } catch (error) {
+      console.error('Erro detalhado:', error.response?.data || error.message);
+    }
   };
 
   return (
@@ -126,6 +139,13 @@ export function NewProduct() {
             )}
           />
           <ErrorMessage>{errors?.category?.message}</ErrorMessage>
+        </InputGroup>
+
+        <InputGroup>
+          <ContainerCheckbox>
+            <input type="checkbox" {...register('offer')} />
+            <Label>Produto em oferta?</Label>
+          </ContainerCheckbox>
         </InputGroup>
 
         <SubmitButton>Adicionar produto</SubmitButton>
