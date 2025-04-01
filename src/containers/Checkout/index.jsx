@@ -12,7 +12,6 @@ export function Checkout() {
     return <div>Erro, tente novamente!</div>;
   }
 
-  console.log(clientSecret);
   return (
     <Elements stripe={stripePromise} options={{ clientSecret }}>
       <CheckoutForm />

@@ -24,8 +24,6 @@ export function Header() {
     navigate('/');
   }
 
-  console.log(userInfo);
-
   return (
     <Container>
       <Content>
