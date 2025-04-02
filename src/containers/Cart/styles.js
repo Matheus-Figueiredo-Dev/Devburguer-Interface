@@ -55,3 +55,15 @@ export const Content = styled.div`
     padding: 40;
     margin: 0 auto;
 `
+
+export const ContainerButton = styled.div`
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    margin-top: 50px;
+
+    button {
+        width: 300px;
+        font-size: 30px;
+    }
+`

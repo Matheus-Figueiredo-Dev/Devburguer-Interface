@@ -73,6 +73,10 @@ export const ProductsContainer = styled.div`
     justify-content: center;
     max-width: 1280px;
     margin: 50px auto 0;
+
+    & > :nth-last-child(1):nth-child(odd) {
+        grid-column: 2 / 3;
+    }
 `;
 
 export const ButtonContainer = styled.div`
