@@ -40,7 +40,7 @@ Git
 
 Clone o repositório:
 
-git clone https://github.com/seuusuario/devburger-interface.git
+git clone https://github.com/MatheusFigueiredo1001/devburger-interface.git
 
 Acesse a pasta do projeto:
 
@@ -52,7 +52,7 @@ npm install
 
 Configure as variáveis de ambiente no arquivo .env
 
-REACT_APP_API_URL=http://localhost:5000
+REACT_APP_API_URL=http://localhost:5173
 REACT_APP_STRIPE_KEY=sua-chave-stripe
 
 🛢️ Executando o projeto
@@ -61,6 +61,6 @@ Para rodar o front-end localmente, use:
 
 npm start
 
-A aplicação estará disponível em http://localhost:3000 🚀
+A aplicação estará disponível em http://localhost:5173 🚀
 
 
