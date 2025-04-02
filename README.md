@@ -1,12 +1,66 @@
-# React + Vite
+🍔 DevBurger - Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O DevBurger é uma aplicação web profissional que simula uma hamburgueria completa. Essa é a interface do usuário e do administrador, construída com React.js e estilizada com Styled-Components.
 
-Currently, two official plugins are available:
+🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 Cadastro e login de usuários👉 Página de cardápio com categorias e produtos👉 Adição de produtos ao carrinho👉 Simulação de pagamento com Stripe👉 Painel administrativo para gerenciar pedidos e produtos
 
-## Expanding the ESLint configuration
+🛠️ Tecnologias
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+React.js
+
+Styled-Components
+
+React Router DOM
+
+React-Multi-Carousel
+
+Material UI (MUI)
+
+Toastify
+
+Prop-Types
+
+Yup
+
+Axios
+
+📦 Como rodar o projeto
+
+🛢️ Pré-requisitos
+
+Antes de começar, tenha instalado:
+
+Node.js
+
+Git
+
+🛢️ Instalação
+
+Clone o repositório:
+
+git clone https://github.com/seuusuario/devburger-interface.git
+
+Acesse a pasta do projeto:
+
+cd devburger-interface
+
+Instale as dependências:
+
+npm install
+
+Configure as variáveis de ambiente no arquivo .env
+
+REACT_APP_API_URL=http://localhost:5000
+REACT_APP_STRIPE_KEY=sua-chave-stripe
+
+🛢️ Executando o projeto
+
+Para rodar o front-end localmente, use:
+
+npm start
+
+A aplicação estará disponível em http://localhost:3000 🚀
+
+
