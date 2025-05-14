@@ -63,8 +63,18 @@ bash
 Copiar
 Editar
 yarn dev
-🖼️ Imagens da Interface
-Você pode incluir aqui capturas de tela do projeto (página inicial, carrinho, tela de admin, etc).
+
+![image](https://github.com/user-attachments/assets/f232c301-45a3-440a-a188-0117c75f178e)
+
+![image](https://github.com/user-attachments/assets/1d768f92-0e07-47a5-b349-3064cf36ce05)
+
+![image](https://github.com/user-attachments/assets/9ce5e002-b3d2-449d-9f1b-e4548d482ed1)
+
+![image](https://github.com/user-attachments/assets/b4f5f478-3771-4c82-a62e-0193a88cd72a)
+
+![image](https://github.com/user-attachments/assets/744ca3a9-d279-43bd-939c-79778b3bc109)
+
+![image](https://github.com/user-attachments/assets/57d854e6-2d50-41ee-92d3-07f5c0b25622)
 
 📍 Status
 ✅ Projeto finalizado com todas as funcionalidades principais. Integrado ao back-end e pronto para simular o funcionamento de uma hamburgueria de verdade.
