@@ -1,66 +1,70 @@
-🍔 DevBurger - Interface
+🍔 DevBurguer - Interface (Front-End)
+Este é o front-end do projeto DevBurguer, uma aplicação completa que simula o funcionamento de uma hamburgueria real. A interface foi construída com React.js, focando na experiência do usuário, responsividade, integração com a API e design moderno.
 
-O DevBurger é uma aplicação web profissional que simula uma hamburgueria completa. Essa é a interface do usuário e do administrador, construída com React.js e estilizada com Styled-Components.
+🎯 Objetivo
+Desenvolver uma interface funcional e responsiva que permita a navegação fluida por menus, visualização de produtos, adição ao carrinho, simulação de compra, além do gerenciamento da aplicação por parte dos administradores.
 
-🚀 Funcionalidades
+⚙️ Tecnologias Utilizadas
+- React.js – Biblioteca principal;
+- Styled-Components – Estilização com CSS-in-JS
+- React Router DOM – Navegação entre páginas;
+- React-Multi-Carousel – Carrossel de produtos;
+- Material UI (MUI) – Componentes visuais prontos e acessíve;
+- React Toastify – Notificações personalizadas;
+- Prop-Types – Validação de props;
+- Yup – Validação de formulários;
+- Axios – Requisições HTTP para API;
 
-👉 Cadastro e login de usuários👉 Página de cardápio com categorias e produtos👉 Adição de produtos ao carrinho👉 Simulação de pagamento com Stripe👉 Painel administrativo para gerenciar pedidos e produtos
+📌 Funcionalidades
+- Página inicial com destaque para os principais produtos.
+- Visualização por categorias (hambúrgueres, bebidas, sobremesas, etc).
+- Carrossel dinâmico de produtos.
+- Carrinho de compras com exibição do valor total e quantidade.
+- Login e cadastro de usuários.
 
-🛠️ Tecnologias
+- Tela administrativa com opções para:
+- Gerenciar produtos;
+- Categorias;
+- Verificar pedidos;
+- Integração completa com o back-end via Axios;
+- Notificações com Toastify para ações do usuário (sucesso, erro, etc);
+- Navegação fluida e rotas protegidas com React Router DOM;
 
-React.js
+🧠 Aprendizados
+- Aplicação completa de React com navegação e consumo de API
+- Componentização e organização de pastas e arquivos.
+- Uso de bibliotecas modernas para melhorar a usabilidade e manutenibilidade.
+- Gerenciamento de estados de forma eficiente.
+- Validação de formulários com feedback amigável.
+- Separação entre áreas públicas e administrativas.
 
-Styled-Components
-
-React Router DOM
-
-React-Multi-Carousel
-
-Material UI (MUI)
-
-Toastify
-
-Prop-Types
-
-Yup
-
-Axios
-
-📦 Como rodar o projeto
-
-🛢️ Pré-requisitos
-
-Antes de começar, tenha instalado:
-
-Node.js
-
-Git
-
-🛢️ Instalação
-
+🚀 Como Rodar o Projeto
 Clone o repositório:
 
-git clone https://github.com/MatheusFigueiredo1001/devburger-interface.git
-
-Acesse a pasta do projeto:
-
-cd devburger-interface
-
+bash
+Copiar
+Editar
+git clone https://github.com/Matheus-Figueiredo-Dev/Devburguer-Interface.git
 Instale as dependências:
 
-npm install
+bash
+Copiar
+Editar
+yarn
+Configure a URL base da API no arquivo de ambiente:
 
-Configure as variáveis de ambiente no arquivo .env
+env
+Copiar
+Editar
+REACT_APP_API_URL=http://localhost:3000
+Inicie a aplicação:
 
-REACT_APP_API_URL=http://localhost:5173
-REACT_APP_STRIPE_KEY=sua-chave-stripe
+bash
+Copiar
+Editar
+yarn dev
+🖼️ Imagens da Interface
+Você pode incluir aqui capturas de tela do projeto (página inicial, carrinho, tela de admin, etc).
 
-🛢️ Executando o projeto
-
-Para rodar o front-end localmente, use:
-
-npm start
-
-A aplicação estará disponível em http://localhost:5173 🚀
-
-
+📍 Status
+✅ Projeto finalizado com todas as funcionalidades principais. Integrado ao back-end e pronto para simular o funcionamento de uma hamburgueria de verdade.
