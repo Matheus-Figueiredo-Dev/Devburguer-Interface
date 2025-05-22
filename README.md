@@ -38,32 +38,6 @@ Desenvolver uma interface funcional e responsiva que permita a navegação fluid
 - Validação de formulários com feedback amigável.
 - Separação entre áreas públicas e administrativas.
 
-🚀 Como Rodar o Projeto
-Clone o repositório:
-
-bash
-Copiar
-Editar
-git clone https://github.com/Matheus-Figueiredo-Dev/Devburguer-Interface.git
-Instale as dependências:
-
-bash
-Copiar
-Editar
-yarn
-Configure a URL base da API no arquivo de ambiente:
-
-env
-Copiar
-Editar
-REACT_APP_API_URL=http://localhost:3000
-Inicie a aplicação:
-
-bash
-Copiar
-Editar
-yarn dev
-
 ![image](https://github.com/user-attachments/assets/f232c301-45a3-440a-a188-0117c75f178e)
 
 ![image](https://github.com/user-attachments/assets/1d768f92-0e07-47a5-b349-3064cf36ce05)
@@ -78,3 +52,24 @@ yarn dev
 
 📍 Status
 ✅ Projeto finalizado com todas as funcionalidades principais. Integrado ao back-end e pronto para simular o funcionamento de uma hamburgueria de verdade.
+
+## ⚙️ Como executar o projeto
+
+1. **Clone o repositório**:
+
+```bash
+git clone https://github.com/Matheus-Figueiredo-Dev/Devburguer-interface.git
+cd Devburguer-interface
+
+2. **Instale as dependências**:
+yarn
+
+3. **Configure a URL base da API**:
+Crie um arquivo .env na raiz do projeto com a variável abaixo:
+
+REACT_APP_API_URL=http://localhost:3000
+
+Ajuste a URL caso sua API esteja rodando em outro endereço ou porta.
+
+4. **Inicie a aplicação**:
+yarn dev
